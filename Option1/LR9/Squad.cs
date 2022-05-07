@@ -118,6 +118,17 @@ namespace LR9
 			/// Вычисляем площадь квадрата.
 			square = sideLength * sideLength;
 		}
+
+		/// <summary>
+		/// Выовод сведений о фигуре.
+		/// </summary>
+		public void GetSquadOptions()
+		{
+			Console.WriteLine($"Длина стороны:{sideLength}");
+			Console.WriteLine($"Длина диагонали:{diagonal}");
+			Console.WriteLine($"Периметр квадрата:{perimetr}"); 
+			Console.WriteLine($"Площадь квадрата:{square}");
+		}
 		#endregion 
 	}
 }
