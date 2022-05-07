@@ -5,8 +5,9 @@ namespace LR6
 	/// <summary>
 	/// Класс товара.
 	/// </summary>
-	abstract class Product
+	abstract class Product : IStock
 	{
+		#region Поля
 		/// <summary>
 		/// Имя товара.
 		/// </summary>
@@ -34,6 +35,14 @@ namespace LR6
 		/// </summary>
 		public float Grade;
 
+		/// <summary>
+		/// Скидки на данный товар.
+		/// </summary>
+		public string Stocks;
+
+		#endregion
+
+		#region Конструкторы, деструкторы
 		/// <summary>
 		/// Конструктор по умолчанию.
 		/// </summary>
@@ -65,7 +74,9 @@ namespace LR6
 		{
 			Console.WriteLine("Не забудьте добавить товар в корзину перед закрытием.");
 		}
+		#endregion
 
+		#region Собственные методы.
 		/// <summary>
 		/// Получить категорию товара.
 		/// Виртуальный метод.
@@ -75,5 +86,36 @@ namespace LR6
 		{
 			return "Категория не определена.";
 		}
+		#endregion
+
+		#region Унаследовано от интерфейса
+		/// <summary>
+		/// Если введо пустое значение строки, то скидки не существует, значит ставим false, иначе true;
+		/// </summary>
+		/// <param name="StockInfo"></param>
+		public void SetStock(string StockInfo)
+		{
+			Stocks = StockInfo;
+		}
+
+		/// <summary>
+		/// Получить акции на товар.
+		/// </summary>
+		public void GetStocks()
+		{
+			if (!string.IsNullOrEmpty(Stocks))
+			{
+				Console.WriteLine(Stocks);
+				return;
+			}
+			Console.WriteLine("Акций на данный товар нет.");
+		}
+
+		/// <summary>
+		/// Не определяем тут, определим в дочерних классах.
+		/// </summary>
+		/// <param name="TotalPoints"></param>
+		public abstract void UsePointsToPay(int TotalPoints);
+		#endregion
 	}
 }

@@ -8,6 +8,7 @@ namespace LR6
 	/// </summary>
 	class Furniture : Product
 	{
+		#region Поля
 		/// <summary>
 		/// Категория мебели.
 		/// </summary>
@@ -23,6 +24,9 @@ namespace LR6
 		/// </summary>
 		/// <param name="distance"> Дистанция до клиента в км. </param>
 		/// <returns></returns>
+		#endregion
+
+		#region Собственные методы
 		public float CalculateCargoTransporation(float distance)
 		{
 			/// За каждый килломентр 50 рублей.
@@ -37,7 +41,9 @@ namespace LR6
 		{
 			return "Мебель " + FurnitureCategory;
 		}
+		#endregion
 
+		#region Конструкторы
 		/// <summary>
 		/// Конструктор для класса.
 		/// Поля из родительского класса передаются в родительский конструктор через base().
@@ -66,5 +72,27 @@ namespace LR6
 			FurnitureCategory = "Категория не определена";
 			Weight = 0;
 		}
+		#endregion
+
+		#region Унаследованные методы
+		/// <summary>
+		/// Использование бонусов при оплате.
+		/// </summary>
+		/// <param name="TotalPoints"></param>
+		public override void UsePointsToPay(int TotalPoints)
+		{
+			/// Лимит для оплаты = 10% от стоимости.
+			double limitToPay = 0.1;
+
+			/// Если бонусов больше чем допустимый размер оплаты ими, то скидка будет 10%
+			double discount = (TotalPoints > Price * limitToPay) ?
+				Price * limitToPay
+				: TotalPoints;
+
+			/// Выведем информацию о скидке и цене с учетом скидки.
+			Console.WriteLine($"Скидка составила:{discount} рублей. " +
+				$"Итоговая стоимость товара:{Price - discount}");
+		}
+		#endregion
 	}
 }

@@ -8,6 +8,7 @@ namespace LR6
 	/// </summary>
 	class Cosmetics : Product
 	{
+		#region Поля
 		/// <summary>
 		/// Косметика, предназначеная для женщин.
 		/// </summary>
@@ -17,7 +18,9 @@ namespace LR6
 		/// Объем косметики.
 		/// </summary>
 		public float Volume;
+		#endregion
 
+		#region Собственные методы
 		/// <summary>
 		/// Отправить заявку на становления амбассадора бренда косметики.
 		/// </summary>
@@ -35,7 +38,30 @@ namespace LR6
 		{
 			return ((ForWomen) ? "Женская " : "Мужская ") + "косметика.";
 		}
+		#endregion
 
+		#region Унаследованные методы
+		/// <summary>
+		/// Использование бонусов при оплате.
+		/// </summary>
+		/// <param name="TotalPoints"></param>
+		public override void UsePointsToPay(int TotalPoints)
+		{
+			/// Лимит для оплаты = 30% от стоимости.
+			double limitToPay = 0.30;
+
+			/// Если бонусов больше чем допустимый размер оплаты ими, то скидка будет 30%
+			double discount = (TotalPoints > Price * limitToPay) ?
+				Price * limitToPay
+				: TotalPoints;
+
+			/// Выведем информацию о скидке и цене с учетом скидки.
+			Console.WriteLine($"Скидка составила:{discount} рублей. " +
+				$"Итоговая стоимость товара:{Price - discount}");
+		}
+		#endregion
+
+		#region Конструкторы
 		/// <summary>
 		/// Конструктор для класса.
 		/// Поля из родительского класса передаются в родительский конструктор через base().
@@ -64,5 +90,6 @@ namespace LR6
 			ForWomen = false;
 			Volume = 0;
 		}
+		#endregion
 	}
 }

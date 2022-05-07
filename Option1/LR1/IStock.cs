@@ -19,9 +19,9 @@ namespace LR6
 		void GetStocks();
 
 		/// <summary>
-		/// Добавить акциюю на товар.
+		/// Устновить акцию на товар.
 		/// </summary>
 		/// <param name="StockInfo"></param>
-		void AddStock(string StockInfo);
+		void SetStock(string StockInfo);
 	}
 }
