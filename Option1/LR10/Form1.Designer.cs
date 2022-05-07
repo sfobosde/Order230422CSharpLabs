@@ -29,20 +29,136 @@ namespace LR10
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.FirstArgumentTextBox = new System.Windows.Forms.TextBox();
+			this.SecondArgumentTextBox = new System.Windows.Forms.TextBox();
+			this.ResaultTextBox = new System.Windows.Forms.TextBox();
+			this.EqualLabel = new System.Windows.Forms.Label();
+			this.AdditionButton = new System.Windows.Forms.Button();
+			this.SubstractionButton = new System.Windows.Forms.Button();
+			this.MultiplicationButton = new System.Windows.Forms.Button();
+			this.DivisionButton = new System.Windows.Forms.Button();
+			this.ClearScreenButton = new System.Windows.Forms.Button();
+			this.MessageLabel = new System.Windows.Forms.Label();
 			this.SuspendLayout();
+			// 
+			// FirstArgumentTextBox
+			// 
+			this.FirstArgumentTextBox.Location = new System.Drawing.Point(13, 13);
+			this.FirstArgumentTextBox.Name = "FirstArgumentTextBox";
+			this.FirstArgumentTextBox.Size = new System.Drawing.Size(63, 23);
+			this.FirstArgumentTextBox.TabIndex = 0;
+			// 
+			// SecondArgumentTextBox
+			// 
+			this.SecondArgumentTextBox.Location = new System.Drawing.Point(82, 13);
+			this.SecondArgumentTextBox.Name = "SecondArgumentTextBox";
+			this.SecondArgumentTextBox.Size = new System.Drawing.Size(63, 23);
+			this.SecondArgumentTextBox.TabIndex = 1;
+			// 
+			// ResaultTextBox
+			// 
+			this.ResaultTextBox.Location = new System.Drawing.Point(166, 12);
+			this.ResaultTextBox.Name = "ResaultTextBox";
+			this.ResaultTextBox.Size = new System.Drawing.Size(114, 23);
+			this.ResaultTextBox.TabIndex = 2;
+			// 
+			// EqualLabel
+			// 
+			this.EqualLabel.AutoSize = true;
+			this.EqualLabel.Location = new System.Drawing.Point(145, 15);
+			this.EqualLabel.Name = "EqualLabel";
+			this.EqualLabel.Size = new System.Drawing.Size(15, 15);
+			this.EqualLabel.TabIndex = 3;
+			this.EqualLabel.Text = "=";
+			// 
+			// AdditionButton
+			// 
+			this.AdditionButton.Location = new System.Drawing.Point(13, 43);
+			this.AdditionButton.Name = "AdditionButton";
+			this.AdditionButton.Size = new System.Drawing.Size(63, 39);
+			this.AdditionButton.TabIndex = 4;
+			this.AdditionButton.Text = "+";
+			this.AdditionButton.UseVisualStyleBackColor = true;
+			// 
+			// SubstractionButton
+			// 
+			this.SubstractionButton.Location = new System.Drawing.Point(82, 43);
+			this.SubstractionButton.Name = "SubstractionButton";
+			this.SubstractionButton.Size = new System.Drawing.Size(63, 39);
+			this.SubstractionButton.TabIndex = 5;
+			this.SubstractionButton.Text = "-";
+			this.SubstractionButton.UseVisualStyleBackColor = true;
+			// 
+			// MultiplicationButton
+			// 
+			this.MultiplicationButton.Location = new System.Drawing.Point(13, 88);
+			this.MultiplicationButton.Name = "MultiplicationButton";
+			this.MultiplicationButton.Size = new System.Drawing.Size(63, 39);
+			this.MultiplicationButton.TabIndex = 6;
+			this.MultiplicationButton.Text = "*";
+			this.MultiplicationButton.UseVisualStyleBackColor = true;
+			// 
+			// DivisionButton
+			// 
+			this.DivisionButton.Location = new System.Drawing.Point(82, 88);
+			this.DivisionButton.Name = "DivisionButton";
+			this.DivisionButton.Size = new System.Drawing.Size(63, 39);
+			this.DivisionButton.TabIndex = 7;
+			this.DivisionButton.Text = "/";
+			this.DivisionButton.UseVisualStyleBackColor = true;
+			// 
+			// ClearScreenButton
+			// 
+			this.ClearScreenButton.Location = new System.Drawing.Point(166, 43);
+			this.ClearScreenButton.Name = "ClearScreenButton";
+			this.ClearScreenButton.Size = new System.Drawing.Size(114, 39);
+			this.ClearScreenButton.TabIndex = 8;
+			this.ClearScreenButton.Text = "Отчистить экран";
+			this.ClearScreenButton.UseVisualStyleBackColor = true;
+			// 
+			// MessageLabel
+			// 
+			this.MessageLabel.AutoSize = true;
+			this.MessageLabel.Location = new System.Drawing.Point(13, 143);
+			this.MessageLabel.Name = "MessageLabel";
+			this.MessageLabel.Size = new System.Drawing.Size(77, 15);
+			this.MessageLabel.TabIndex = 9;
+			this.MessageLabel.Text = "Калькулятор";
 			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(292, 339);
+			this.Controls.Add(this.MessageLabel);
+			this.Controls.Add(this.ClearScreenButton);
+			this.Controls.Add(this.DivisionButton);
+			this.Controls.Add(this.MultiplicationButton);
+			this.Controls.Add(this.SubstractionButton);
+			this.Controls.Add(this.AdditionButton);
+			this.Controls.Add(this.EqualLabel);
+			this.Controls.Add(this.ResaultTextBox);
+			this.Controls.Add(this.SecondArgumentTextBox);
+			this.Controls.Add(this.FirstArgumentTextBox);
 			this.Name = "Form1";
 			this.Text = "Form1";
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 
 		#endregion
+
+		private System.Windows.Forms.TextBox FirstArgumentTextBox;
+		private System.Windows.Forms.TextBox SecondArgumentTextBox;
+		private System.Windows.Forms.TextBox ResaultTextBox;
+		private System.Windows.Forms.Label EqualLabel;
+		private System.Windows.Forms.Button AdditionButton;
+		private System.Windows.Forms.Button SubstractionButton;
+		private System.Windows.Forms.Button MultiplicationButton;
+		private System.Windows.Forms.Button DivisionButton;
+		private System.Windows.Forms.Button ClearScreenButton;
+		private System.Windows.Forms.Label MessageLabel;
 	}
 }
 
