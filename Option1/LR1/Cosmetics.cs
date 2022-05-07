@@ -33,7 +33,7 @@ namespace LR6
 		/// <returns></returns>
 		public override string GetProductCategory()
 		{
-			return "Косметика";
+			return ((ForWomen) ? "Женская " : "Мужская ") + "косметика.";
 		}
 
 		/// <summary>

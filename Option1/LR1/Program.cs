@@ -21,6 +21,7 @@ namespace LR6
 			Console.WriteLine($"Стоимость товара:{product.Price} руб.");
 			Console.WriteLine($"Описание товара:{product.Description}.");
 			Console.WriteLine($"Оценка товара:{product.Grade}/5,0");
+			Console.WriteLine($"Категория товара:{product.GetProductCategory()}");
 		}
 
 		/// <summary>
@@ -29,12 +30,38 @@ namespace LR6
 		static void CreateItems()
 		{
 			/// Создадим пустой товар и выведем его данные.
-			//Product product = new Product();
-			//PrintProductDetails(product);
+			Cosmetics cosmetic = new Cosmetics();
+			PrintProductDetails(cosmetic);
 
-			/// Создадим какой нибудь не пустой товар.
-			//product = new Product("Стол письменный", 20, 3000, "Для учебы и работы", (float)4.5);
-			//PrintProductDetails(product);
+			Furniture furniture = new Furniture();
+			PrintProductDetails(furniture);
+
+			/// Создаем крем для рук.
+			cosmetic = new Cosmetics(
+				"Крем для рук",
+				500,
+				999,
+				"Увлажняющий крем",
+				(float)4.0,
+				true,
+				(float)0.33);
+
+			/// Создаем письменный стол.
+			furniture = new Furniture(
+				"Стол письменный", 
+				20, 3000, 
+				"Для учебы и работы.", 
+				(float)4.5,
+				"В спальню.",
+				24);
+
+			/// Выводим информацию о обоих товарах.
+			PrintProductDetails(cosmetic);
+			cosmetic.BecomeAmbassador("8468441566");
+
+			PrintProductDetails(furniture);
+			Console.WriteLine($"Расстояние до магазина: 5 км. Стоимость доставки составит:" +
+				$"{furniture.CalculateCargoTransporation(5)} руб.");
 		}
 	}
 }

@@ -35,7 +35,7 @@ namespace LR6
 		/// <returns></returns>
 		public override string GetProductCategory()
 		{
-			return "Мебель";
+			return "Мебель " + FurnitureCategory;
 		}
 
 		/// <summary>
