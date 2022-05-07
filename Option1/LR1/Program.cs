@@ -6,11 +6,10 @@ namespace LR1
 	{
 		static void Main(string[] args)
 		{
-			Product emptyProduct = new Product();
-			Product table = new Product("Стол письменный", 20, 3000, "Для учебы и работы", (float)4.5);
+			/// Вызовем функцию создания товаров.
+			CreateItems();
 
-			PrintProductDetails(emptyProduct);
-			PrintProductDetails(table);
+			Console.ReadLine();
 		}
 
 		/// <summary>
@@ -24,6 +23,20 @@ namespace LR1
 			Console.WriteLine($"Стоимость товара:{product.Price} руб.");
 			Console.WriteLine($"Описание товара:{product.Description}.");
 			Console.WriteLine($"Оценка товара:{product.Grade}/5,0");
+		}
+
+		/// <summary>
+		/// Функция для создания товаров.
+		/// </summary>
+		static void CreateItems()
+		{
+			/// Создадим пустой товар и выведем его данные.
+			Product product = new Product();
+			PrintProductDetails(product);
+
+			/// Создадим какой нибудь не пустой товар.
+			product = new Product("Стол письменный", 20, 3000, "Для учебы и работы", (float)4.5);
+			PrintProductDetails(product);
 		}
 	}
 }
