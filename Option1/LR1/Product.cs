@@ -5,7 +5,7 @@ namespace LR6
 	/// <summary>
 	/// Класс товара.
 	/// </summary>
-	class Product
+	abstract class Product
 	{
 		/// <summary>
 		/// Имя товара.
@@ -13,7 +13,7 @@ namespace LR6
 		public string Name;
 
 		/// <summary>
-		/// Колличество.
+		/// Количество.
 		/// </summary>
 		public int Count;
 
@@ -64,6 +64,16 @@ namespace LR6
 		~Product()
 		{
 			Console.WriteLine("Не забудьте добавить товар в корзину перед закрытием.");
+		}
+
+		/// <summary>
+		/// Получить категорию товара.
+		/// Виртуальный метод.
+		/// </summary>
+		/// <returns> Категория товара. </returns>
+		public virtual string GetProductCategory()
+		{
+			return "Категория не определена.";
 		}
 	}
 }
