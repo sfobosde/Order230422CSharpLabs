@@ -8,8 +8,6 @@ namespace LR6
 		{
 			/// Вызовем функцию создания товаров.
 			CreateItems();
-
-			Console.ReadLine();
 		}
 
 		/// <summary>
@@ -31,12 +29,12 @@ namespace LR6
 		static void CreateItems()
 		{
 			/// Создадим пустой товар и выведем его данные.
-			Product product = new Product();
-			PrintProductDetails(product);
+			//Product product = new Product();
+			//PrintProductDetails(product);
 
 			/// Создадим какой нибудь не пустой товар.
-			product = new Product("Стол письменный", 20, 3000, "Для учебы и работы", (float)4.5);
-			PrintProductDetails(product);
+			//product = new Product("Стол письменный", 20, 3000, "Для учебы и работы", (float)4.5);
+			//PrintProductDetails(product);
 		}
 	}
 }
