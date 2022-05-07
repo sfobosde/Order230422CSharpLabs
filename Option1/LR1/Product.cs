@@ -63,17 +63,7 @@ namespace LR6
 		/// </summary>
 		~Product()
 		{
-			Console.ForegroundColor = ConsoleColor.Red;
-			Console.WriteLine("Не забудьте посмотреть похожие товары.");
-		}
-
-		/// <summary>
-		/// Создадим функцию, которая впоследствие вызовет деструктор.
-		/// </summary>
-		/// <param name="similarItemsCount"></param>
-		public void GetSimilarItems()
-		{
-			Product similarProduct = new Product(Name, Count, Price, Description, Grade);
+			Console.WriteLine("Не забудьте добавить товар в корзину перед закрытием.");
 		}
 	}
 }
