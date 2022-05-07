@@ -28,5 +28,43 @@ namespace LR6
 			/// За каждый килломентр 50 рублей.
 			return distance * 50;
 		}
+
+		/// <summary>
+		/// Перегрузка родительского метода.
+		/// </summary>
+		/// <returns></returns>
+		public override string GetProductCategory()
+		{
+			return "Мебель";
+		}
+
+		/// <summary>
+		/// Конструктор для класса.
+		/// Поля из родительского класса передаются в родительский конструктор через base().
+		/// </summary>
+		public Furniture(
+			string Name,
+			int Count,
+			float Price,
+			string Description,
+			float Grade,
+			string FurnitureCategory,
+			float Weight)
+			: base(Name, Count, Price, Description, Grade)
+		{
+			/// Передаем значения полям дочернего класса.
+			this.FurnitureCategory = FurnitureCategory;
+			this.Weight = Weight;
+		}
+
+		/// <summary>
+		/// При коснтрукторе по умолчанию вызовем такой же в родительском.
+		/// </summary>
+		public Furniture() : base()
+		{
+			/// Делаем поля пустыми.
+			FurnitureCategory = "Категория не определена";
+			Weight = 0;
+		}
 	}
 }
