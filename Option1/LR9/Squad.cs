@@ -9,7 +9,7 @@ namespace LR9
 	{
 		#region Свойства
 		/// <summary>
-		/// Длина стороны
+		/// Длина стороны.
 		/// </summary>
 		public double SideLength
 		{
@@ -71,22 +71,22 @@ namespace LR9
 		/// <summary>
 		/// Длина стороны.
 		/// </summary>
-		private double sideLength;
+		protected double sideLength;
 
 		/// <summary>
 		/// Диагональ квадрата.
 		/// </summary>
-		private double diagonal;
+		protected double diagonal;
 
 		/// <summary>
 		/// Периметр квадрата.
 		/// </summary>
-		private double perimetr;
+		protected double perimetr;
 
 		/// <summary>
 		/// Площадь квадрата.
 		/// </summary>
-		private double square;
+		protected double square;
 		#endregion
 
 		#region Конструкторы
@@ -105,9 +105,9 @@ namespace LR9
 
 		#region Методы
 		/// <summary>
-		/// Вычисление диагонали, площади, периметра.
+		/// Вычисление свойств фигуры.
 		/// </summary>
-		private void CalculateOptions()
+		protected virtual void CalculateOptions()
 		{
 			/// Вычисление длины диагонали квадрата.
 			diagonal = Math.Sqrt(2*sideLength*sideLength);
@@ -122,7 +122,7 @@ namespace LR9
 		/// <summary>
 		/// Выовод сведений о фигуре.
 		/// </summary>
-		public void GetSquadOptions()
+		public virtual void GetSquadOptions()
 		{
 			Console.WriteLine($"Длина стороны:{sideLength}");
 			Console.WriteLine($"Длина диагонали:{diagonal}");
