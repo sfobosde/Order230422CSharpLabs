@@ -21,7 +21,7 @@ namespace LR6
 			Console.WriteLine($"Стоимость товара:{product.Price} руб.");
 			Console.WriteLine($"Описание товара:{product.Description}.");
 			Console.WriteLine($"Оценка товара:{product.Grade}/5,0");
-			Console.WriteLine($"Категория товара:{product.GetProductCategory()}");
+			Console.WriteLine($"Категория товара:{product.GetProductCategory()}\n");
 		}
 
 		/// <summary>
@@ -55,13 +55,43 @@ namespace LR6
 				"В спальню.",
 				24);
 
+			/// Бонусные очки для оплаты товара.
+			int bonusPoints = 350;
+
 			/// Выводим информацию о обоих товарах.
 			PrintProductDetails(cosmetic);
 			cosmetic.BecomeAmbassador("8468441566");
 
+			TestStocks(cosmetic, bonusPoints, "2+1");
+
 			PrintProductDetails(furniture);
 			Console.WriteLine($"Расстояние до магазина: 5 км. Стоимость доставки составит:" +
 				$"{furniture.CalculateCargoTransporation(5)} руб.");
+
+			TestStocks(furniture, bonusPoints, "Бесплатная доставка");
+		}
+
+		/// <summary>
+		/// Проверка работы акций.
+		/// Тестим работу интерфейса.
+		/// </summary>
+		/// <param name="stockProduct"></param>
+		static void TestStocks(IStock stockProduct, int bonusPoints, string stock)
+		{
+			/// Проверяем наличие акций.
+			stockProduct.GetStocks();
+
+			/// Добавляем акцию.
+			stockProduct.SetStock(stock);
+
+			/// Проверяем наличие акций.
+			stockProduct.GetStocks();
+
+			/// Пробуем оплатить бонусами и узнаем цену.
+			stockProduct.UsePointsToPay(bonusPoints);
+
+			/// Убирвем акцию.
+			stockProduct.SetStock("");
 		}
 	}
 }
