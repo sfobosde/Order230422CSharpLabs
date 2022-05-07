@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LR1
+namespace LR6
 {
 	class Program
 	{
