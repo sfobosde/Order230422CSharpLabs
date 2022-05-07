@@ -7,66 +7,6 @@ namespace LR9
 	/// </summary>
 	class Squad
 	{
-		#region Свойства
-		/// <summary>
-		/// Длина стороны.
-		/// </summary>
-		public double SideLength
-		{
-			get
-			{
-				return sideLength;
-			}
-			set
-			{
-				/// Проверка на неотрицательность значений.
-				if (value>0)
-				{
-					sideLength = value;
-
-					/// Перерассчитываем все свойства квадрата.
-					CalculateOptions();
-				}
-			}
-		}
-
-		/// <summary>
-		/// Диагональ квадрата.
-		/// </summary>
-		public double Diagonal
-		{
-			/// Только возвращаем значение длины диагонали.
-			get
-			{
-				return diagonal;
-			}
-		}
-
-		/// <summary>
-		/// Периметр квадрата.
-		/// </summary>
-		public double Perimetr
-		{
-			/// Только возвращаем значение периметра.
-			get
-			{
-				return perimetr;
-			}
-		}
-
-		/// <summary>
-		/// Площадь квадрата.
-		/// </summary>
-		public double Square
-		{
-			/// Только возвращаем значение периметра.
-			get
-			{
-				return square;
-			}
-		}
-		#endregion
-
 		#region Поля
 		/// <summary>
 		/// Длина стороны.
@@ -97,9 +37,6 @@ namespace LR9
 		public Squad(double sideLength)
 		{
 			this.sideLength = sideLength;
-
-			/// Рассчитываем все свойства квадрата.
-			CalculateOptions();
 		}
 		#endregion
 
@@ -107,7 +44,7 @@ namespace LR9
 		/// <summary>
 		/// Вычисление свойств фигуры.
 		/// </summary>
-		protected virtual void CalculateOptions()
+		public virtual void CalculateOptions()
 		{
 			/// Вычисление длины диагонали квадрата.
 			diagonal = Math.Sqrt(2*sideLength*sideLength);
@@ -128,6 +65,15 @@ namespace LR9
 			Console.WriteLine($"Длина диагонали:{diagonal}");
 			Console.WriteLine($"Периметр квадрата:{perimetr}"); 
 			Console.WriteLine($"Площадь квадрата:{square}");
+		}
+
+		/// <summary>
+		/// Получим значение площади.
+		/// </summary>
+		/// <returns></returns>
+		public virtual double GetCheckingParametrValue()
+		{
+			return square;
 		}
 		#endregion 
 	}
