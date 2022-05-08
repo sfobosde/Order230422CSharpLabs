@@ -5,7 +5,7 @@ namespace LR6
 	/// <summary>
 	/// Класс персона.
 	/// </summary>
-	class Person
+	abstract class Person
 	{
 		#region Поля
 		/// <summary>
@@ -45,6 +45,14 @@ namespace LR6
 			Console.WriteLine($"Пол:{Male}");
 			Console.WriteLine($"Возраст:{Age}");
 			Console.WriteLine($"Номер телефона:{Phone}");
+		}
+
+		/// <summary>
+		/// Функция специальных возможностей.
+		/// </summary>
+		public virtual void UseSpecialAbilities()
+		{
+			Console.WriteLine("Пока что нет специальных возможностей.");
 		}
 		#endregion
 
