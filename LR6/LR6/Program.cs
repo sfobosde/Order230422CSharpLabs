@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace LR6
 {
@@ -6,11 +7,50 @@ namespace LR6
 	{
 		static void Main(string[] args)
 		{
-			Person person = new Person();
-			person.GetPersonData();
+			Children children = null;
 
-			person = new Person("Иван",	"Иванов", 18,true, "89654728651");
-			person.GetPersonData();
+			var childrens = new List<Children>() 
+			{ 
+				children 
+			};
+
+			Parent father = new Parent("Петров",
+				"Николай",
+				45,
+				true,
+				"89654754251",
+				childrens);
+
+			Parent mother = new Parent("Петрова",
+				"Татьяна",
+				45,
+				false,
+				"89654778951",
+				childrens);
+
+			father.MarryOn(mother);
+			mother.MarryOn(father);
+
+			var parents = new List<Person>()
+			{
+				mother,
+				father
+			};
+
+			children = new Children(
+				"Иван", 
+				"Иванов", 
+				13, 
+				true, 
+				"89654728651",
+				parents);
+
+			children.GetPersonData();
+			father.GetPersonData();
+			mother.GetPersonData();
+
+			children.UseSpecialAbilities();
+			father.UseSpecialAbilities();
 		}
 	}
 }
