@@ -7,10 +7,10 @@ namespace LR6
 	{
 		static void Main(string[] args)
 		{
-			CreatePenrsons();
+			CreatePersons();
 		}
 
-		static void CreatePenrsons()
+		static void CreatePersons()
 		{
 			Children children = null;
 
