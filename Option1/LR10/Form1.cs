@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LR10
@@ -17,5 +10,20 @@ namespace LR10
 			InitializeComponent();
 		}
 
+		/// <summary>
+		/// Проверка исходных данных на корректность.
+		/// </summary>
+		private (double, double) ValidateInitialData()
+		{
+			/// Пытаемся перевести текст в double.
+			if (Double.TryParse(FirstArgumentTextBox.Text, out double firstArgument)
+				&& Double.TryParse(SecondArgumentTextBox.Text, out double secondArgument))
+			{
+				return (firstArgument, secondArgument);
+			}
+
+			/// Если перевести не удалось, кидаем исключение.
+			throw new ArgumentException("Неккоретно введены данные.");
+		}
 	}
 }
