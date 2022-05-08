@@ -119,6 +119,7 @@ namespace LR10
 			this.ClearScreenButton.TabIndex = 8;
 			this.ClearScreenButton.Text = "Отчистить экран";
 			this.ClearScreenButton.UseVisualStyleBackColor = true;
+			this.ClearScreenButton.Click += new System.EventHandler(this.ClearScreenButton_Click);
 			// 
 			// MessageLabel
 			// 
