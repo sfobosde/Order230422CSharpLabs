@@ -19,6 +19,11 @@ namespace LR9
 		/// Периметр треугольника
 		/// </summary>
 		protected double perimetr;
+
+		/// <summary>
+		/// Площадь треугольника.
+		/// </summary>
+		protected double square;
 		#endregion
 
 		#region Методы
@@ -44,6 +49,13 @@ namespace LR9
 				sideNum < 3;
 				perimetr += sidesLength[sideNum],
 				sideNum++) ;
+
+			/// Находим полупериметр и площадь по формули герона.
+			double halfPerimetr = perimetr / 2;
+			square = Math.Sqrt(halfPerimetr 
+				* (halfPerimetr - sidesLength[0])
+				* (halfPerimetr - sidesLength[1])
+				* (halfPerimetr - sidesLength[2]));
 		}
 
 		/// <summary>
@@ -58,6 +70,9 @@ namespace LR9
 
 			/// Вывод периметра.
 			Console.WriteLine($"Периметр:{perimetr}");
+
+			/// Плозадь треугольника.
+			Console.WriteLine($"Площаь треугольника:{square}");
 		}
 		#endregion
 
