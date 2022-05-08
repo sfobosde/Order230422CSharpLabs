@@ -78,6 +78,7 @@ namespace LR10
 			this.AvgButton.TabIndex = 4;
 			this.AvgButton.Text = "AVG";
 			this.AvgButton.UseVisualStyleBackColor = true;
+			this.AvgButton.Click += new System.EventHandler(this.AvgButton_Click);
 			// 
 			// LcmButton
 			// 
@@ -87,6 +88,7 @@ namespace LR10
 			this.LcmButton.TabIndex = 5;
 			this.LcmButton.Text = "НОК";
 			this.LcmButton.UseVisualStyleBackColor = true;
+			this.LcmButton.Click += new System.EventHandler(this.LcmButton_Click);
 			// 
 			// GcdButton
 			// 
@@ -96,6 +98,7 @@ namespace LR10
 			this.GcdButton.TabIndex = 6;
 			this.GcdButton.Text = "НОД";
 			this.GcdButton.UseVisualStyleBackColor = true;
+			this.GcdButton.Click += new System.EventHandler(this.GcdButton_Click);
 			// 
 			// ClearScreenButton
 			// 

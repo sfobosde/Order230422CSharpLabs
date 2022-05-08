@@ -19,6 +19,12 @@ namespace LR10
 			var form = new Form1();
 			var calculator = new Calculator();
 
+			form.CalculateAvg += calculator.CalculateAvg;
+			form.CalculateLcm += calculator.CalculateLcm;
+			form.CalculateGcd += calculator.CalculateGcd;
+
+			calculator.SendResponse += form.GetResponseFromCalculator;
+
 			/// Подписываем функции на делегаты.
 
 			calculator.SendResponse += form.GetResponseFromCalculator;
