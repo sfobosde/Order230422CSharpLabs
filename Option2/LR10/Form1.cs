@@ -38,8 +38,8 @@ namespace LR10
 		private (double, double) ValidateInitialData()
 		{
 			/// Пытаемся перевести текст в double.
-			if (Double.TryParse(FirstArgumentTextBox.Text, out double firstArgument)
-				&& Double.TryParse(SecondArgumentTextBox.Text, out double secondArgument))
+			if (int.TryParse(FirstArgumentTextBox.Text, out int firstArgument)
+				&& int.TryParse(SecondArgumentTextBox.Text, out int secondArgument))
 			{
 				return (firstArgument, secondArgument);
 			}
@@ -51,7 +51,8 @@ namespace LR10
 			}
 
 			/// Если перевести не удалось, кидаем исключение.
-			throw new Exception("Неккоретно введены данные.");
+			throw new Exception("Неккоретно введены данные." +
+				"\nОжидалось целое число.");
 		}
 
 		/// <summary>
