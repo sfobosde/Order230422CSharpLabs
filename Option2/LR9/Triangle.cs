@@ -31,13 +31,26 @@ namespace LR9
 		protected double[] angels;
 		#endregion
 
+		#region Свойства
+		/// <summary>
+		/// Площадь
+		/// </summary>
+		public double Square
+		{
+			get
+			{
+				return square;
+			}
+		}
+		#endregion
+
 		#region Методы
 
 		/// <summary>
 		/// Проверка на существование такого треуголника.
 		/// </summary>
 		/// <returns></returns>
-		protected bool IsTriangleExists()
+		protected virtual bool CheckTriangleParams()
 		{
 			return (sidesLength[0] + sidesLength[1] > sidesLength[2]
 				&& sidesLength[1] + sidesLength[2] > sidesLength[0]
@@ -87,7 +100,7 @@ namespace LR9
 		/// <summary>
 		/// Вывод информации о треугольнике.
 		/// </summary>
-		public void GetTriangleOptions()
+		public virtual void GetTriangleOptions()
 		{
 			/// Вывод длины сторон.
 			Console.WriteLine($"Длина стороны:{sidesLength[0]}");
@@ -113,7 +126,7 @@ namespace LR9
 		{
 			this.sidesLength = sidesLength;
 
-			if (!IsTriangleExists())
+			if (!CheckTriangleParams())
 			{
 				throw new Exception("Такой треугольник не может существовать.");
 			}
