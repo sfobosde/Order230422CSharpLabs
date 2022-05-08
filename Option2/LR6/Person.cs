@@ -5,7 +5,7 @@ namespace LR6
 	/// <summary>
 	/// Класс персона.
 	/// </summary>
-	abstract class Person
+	abstract class Person : IPerson
 	{
 		#region Поля
 		/// <summary>
@@ -102,7 +102,18 @@ namespace LR6
 		}
 		#endregion
 
-		#region 
+		#region Унаследовано от интерфейса
+		/// <summary>
+		/// Вычисление возраста по дате рождения.
+		/// </summary>
+		/// <param name="birthDate"></param>
+		void CalculateAge(DateTime birthDate);
+
+		/// <summary>
+		/// Заниматься основной деятельностью (работой).
+		/// Реализуем в классе ребенка и родителя.
+		/// </summary>
+		public abstract void CarryOutMainActivity();
 		#endregion
 	}
 }
