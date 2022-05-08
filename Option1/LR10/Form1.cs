@@ -11,51 +11,27 @@ namespace LR10
 		/// <param name="firstArg"></param>
 		/// <param name="secondArg"></param>
 		/// <returns></returns>
-		public delegate void Adition(double firstArg, double secondArg);
-
-		/// <summary>
-		/// Делегат для вычитания.
-		/// </summary>
-		/// <param name="firstArg"></param>
-		/// <param name="secondArg"></param>
-		/// <returns></returns>
-		public delegate void Substraction(double firstArg, double secondArg);
-
-		/// <summary>
-		/// Делегат для умножения.
-		/// </summary>
-		/// <param name="firstArg"></param>
-		/// <param name="secondArg"></param>
-		/// <returns></returns>
-		public delegate void Multiplication(double firstArg, double secondArg);
-
-		/// <summary>
-		/// Делегат для деления.
-		/// </summary>
-		/// <param name="firstArg"></param>
-		/// <param name="secondArg"></param>
-		/// <returns></returns>
-		public delegate void Division(double firstArg, double secondArg);
+		public delegate void Calculating(double firstArg, double secondArg);
 
 		/// <summary>
 		/// Прототип делегата сложения.
 		/// </summary>
-		public Adition adition;
+		public Calculating adition;
 
 		/// <summary>
 		/// Прототип делегата вычитания.
 		/// </summary>
-		public Substraction substraction;
+		public Calculating substraction;
 
 		/// <summary>
 		/// Прототип делегата умножения.
 		/// </summary>
-		public Multiplication multiplication;
+		public Calculating multiplication;
 
 		/// <summary>
 		/// Прототип делегата деления.
 		/// </summary>
-		public Division division;
+		public Calculating division;
 
 		/// <summary>
 		/// Конструктор формы.
