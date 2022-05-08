@@ -11,7 +11,7 @@ namespace LR10
 		/// <param name="firstArg"></param>
 		/// <param name="secondArg"></param>
 		/// <returns></returns>
-		public delegate double Adition(double firstArg, double secondArg);
+		public delegate void Adition(double firstArg, double secondArg);
 
 		/// <summary>
 		/// Делегат для вычитания.
@@ -19,7 +19,7 @@ namespace LR10
 		/// <param name="firstArg"></param>
 		/// <param name="secondArg"></param>
 		/// <returns></returns>
-		public delegate double Substraction(double firstArg, double secondArg);
+		public delegate void Substraction(double firstArg, double secondArg);
 
 		/// <summary>
 		/// Делегат для умножения.
@@ -27,7 +27,7 @@ namespace LR10
 		/// <param name="firstArg"></param>
 		/// <param name="secondArg"></param>
 		/// <returns></returns>
-		public delegate double Multiplication(double firstArg, double secondArg);
+		public delegate void Multiplication(double firstArg, double secondArg);
 
 		/// <summary>
 		/// Делегат для деления.
@@ -35,7 +35,7 @@ namespace LR10
 		/// <param name="firstArg"></param>
 		/// <param name="secondArg"></param>
 		/// <returns></returns>
-		public delegate double Division(double firstArg, double secondArg);
+		public delegate void Division(double firstArg, double secondArg);
 
 		/// <summary>
 		/// Прототип делегата сложения.
@@ -97,8 +97,7 @@ namespace LR10
 			try
 			{
 				(double firstArg, double secondArg) = ValidateInitialData();
-				ResaultTextBox.Text = adition(firstArg, secondArg).ToString();
-				MessageLabel.Text = "Вычислено!";
+				adition(firstArg, secondArg);
 			}
 			catch (Exception excp)
 			{
@@ -117,8 +116,7 @@ namespace LR10
 			try
 			{
 				(double firstArg, double secondArg) = ValidateInitialData();
-				ResaultTextBox.Text = substraction(firstArg, secondArg).ToString();
-				MessageLabel.Text = "Вычислено!";
+				substraction(firstArg, secondArg);
 			}
 			catch (Exception excp)
 			{
@@ -137,8 +135,7 @@ namespace LR10
 			try
 			{
 				(double firstArg, double secondArg) = ValidateInitialData();
-				ResaultTextBox.Text = multiplication(firstArg, secondArg).ToString();
-				MessageLabel.Text = "Вычислено!";
+				multiplication(firstArg, secondArg);
 			}
 			catch (Exception excp)
 			{
@@ -157,14 +154,24 @@ namespace LR10
 			try
 			{
 				(double firstArg, double secondArg) = ValidateInitialData();
-				ResaultTextBox.Text = division(firstArg, secondArg).ToString();
-				MessageLabel.Text = "Вычислено!";
+				division(firstArg, secondArg);
 			}
 			catch (Exception excp)
 			{
 				ResaultTextBox.Text = "";
 				MessageLabel.Text = excp.Message;
 			}
+		}
+
+		/// <summary>
+		/// Обработчик события.
+		/// Вывод результата на форму.
+		/// </summary>
+		/// <param name="response"></param>
+		public void GetResponseFromCalculator(double response)
+		{
+			ResaultTextBox.Text = response.ToString();
+			MessageLabel.Text = "Вычислено!";
 		}
 	}
 }

@@ -7,15 +7,16 @@ namespace LR10
 	/// </summary>
 	class Calculator
 	{
+		#region Calculations
 		/// <summary>
 		/// Сложение.
 		/// </summary>
 		/// <param name="firstArg"></param>
 		/// <param name="secondArg"></param>
 		/// <returns></returns>
-		public double Addition(double firstArg, double secondArg)
+		public void Addition(double firstArg, double secondArg)
 		{
-			return firstArg + secondArg;
+			SendResponse(firstArg + secondArg);
 		}
 
 		/// <summary>
@@ -24,9 +25,9 @@ namespace LR10
 		/// <param name="firstArg"></param>
 		/// <param name="secondArg"></param>
 		/// <returns></returns>
-		public double Substraction(double firstArg, double secondArg)
+		public void Substraction(double firstArg, double secondArg)
 		{
-			return firstArg - secondArg;
+			SendResponse(firstArg - secondArg);
 		}
 
 		/// <summary>
@@ -35,9 +36,9 @@ namespace LR10
 		/// <param name="firstArg"></param>
 		/// <param name="secondArg"></param>
 		/// <returns></returns>
-		public double Multiplication(double firstArg, double secondArg)
+		public void Multiplication(double firstArg, double secondArg)
 		{
-			return firstArg * secondArg;
+			SendResponse(firstArg * secondArg);
 		}
 
 		/// <summary>
@@ -46,9 +47,17 @@ namespace LR10
 		/// <param name="firstArg"></param>
 		/// <param name="secondArg"></param>
 		/// <returns></returns>
-		public double Division(double firstArg, double secondArg)
+		public void Division(double firstArg, double secondArg)
 		{
-			return firstArg / secondArg;
+			SendResponse(firstArg / secondArg);
 		}
+		#endregion
+
+		/// <summary>
+		/// Делегат и событие передачи вычислений на форму.
+		/// </summary>
+		/// <param name="response"></param>
+		public delegate void SendingCalculationResponse(double response);
+		public event SendingCalculationResponse SendResponse;
 	}
 }

@@ -25,6 +25,8 @@ namespace LR10
 			form.multiplication += calculator.Multiplication;
 			form.division += calculator.Division;
 
+			calculator.SendResponse += form.GetResponseFromCalculator;
+
 			/// Запускаем форму.
 			Application.Run(form);
 		}
