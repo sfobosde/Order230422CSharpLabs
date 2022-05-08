@@ -89,6 +89,7 @@ namespace LR10
 			this.SubstractionButton.TabIndex = 5;
 			this.SubstractionButton.Text = "-";
 			this.SubstractionButton.UseVisualStyleBackColor = true;
+			this.SubstractionButton.Click += new System.EventHandler(this.SubstractionButton_Click);
 			// 
 			// MultiplicationButton
 			// 
@@ -98,6 +99,7 @@ namespace LR10
 			this.MultiplicationButton.TabIndex = 6;
 			this.MultiplicationButton.Text = "*";
 			this.MultiplicationButton.UseVisualStyleBackColor = true;
+			this.MultiplicationButton.Click += new System.EventHandler(this.MultiplicationButton_Click);
 			// 
 			// DivisionButton
 			// 
@@ -107,6 +109,7 @@ namespace LR10
 			this.DivisionButton.TabIndex = 7;
 			this.DivisionButton.Text = "/";
 			this.DivisionButton.UseVisualStyleBackColor = true;
+			this.DivisionButton.Click += new System.EventHandler(this.DivisionButton_Click);
 			// 
 			// ClearScreenButton
 			// 
