@@ -7,21 +7,28 @@ namespace LR6
 	{
 		static void Main(string[] args)
 		{
+			CreatePenrsons();
+		}
+
+		static void CreatePenrsons()
+		{
 			Children children = null;
 
-			var childrens = new List<Children>() 
-			{ 
-				children 
+			var childrens = new List<Children>()
+			{
+				children
 			};
 
-			Parent father = new Parent("Петров",
+			Parent father = new Parent(
+				"Петров",
 				"Николай",
 				45,
 				true,
 				"89654754251",
 				childrens);
 
-			Parent mother = new Parent("Петрова",
+			Parent mother = new Parent(
+				"Петрова",
 				"Татьяна",
 				45,
 				false,
@@ -38,10 +45,10 @@ namespace LR6
 			};
 
 			children = new Children(
-				"Иван", 
-				"Иванов", 
-				13, 
-				true, 
+				"Петров",
+				"Иванов",
+				13,
+				true,
 				"89654728651",
 				parents);
 
