@@ -173,5 +173,18 @@ namespace LR10
 			ResaultTextBox.Text = response.ToString();
 			MessageLabel.Text = "Вычислено!";
 		}
+
+		/// <summary>
+		/// Кнопка отчистить форму.
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void ClearScreenButton_Click(object sender, EventArgs e)
+		{
+			FirstArgumentTextBox.Text = "";
+			SecondArgumentTextBox.Text = "";
+			ResaultTextBox.Text = "";
+			MessageLabel.Text = "";
+		}
 	}
 }
