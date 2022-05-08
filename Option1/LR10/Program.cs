@@ -1,7 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LR10
@@ -17,7 +14,13 @@ namespace LR10
 			Application.SetHighDpiMode(HighDpiMode.SystemAware);
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new Form1());
+
+			var form = new Form1();
+			var calculator = new Calculator();
+
+			form.adition += calculator.Addition;
+
+			Application.Run(form);
 		}
 	}
 }

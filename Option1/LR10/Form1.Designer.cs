@@ -79,6 +79,7 @@ namespace LR10
 			this.AdditionButton.TabIndex = 4;
 			this.AdditionButton.Text = "+";
 			this.AdditionButton.UseVisualStyleBackColor = true;
+			this.AdditionButton.Click += new System.EventHandler(this.AdditionButton_Click);
 			// 
 			// SubstractionButton
 			// 
