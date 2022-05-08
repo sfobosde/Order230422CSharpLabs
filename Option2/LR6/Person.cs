@@ -107,7 +107,10 @@ namespace LR6
 		/// Вычисление возраста по дате рождения.
 		/// </summary>
 		/// <param name="birthDate"></param>
-		void CalculateAge(DateTime birthDate);
+		public void CalculateAge(DateTime birthDate)
+		{
+			Age = (DateTime.Now - birthDate).Days / 365;
+		}
 
 		/// <summary>
 		/// Заниматься основной деятельностью (работой).
