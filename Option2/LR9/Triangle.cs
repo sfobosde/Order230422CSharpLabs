@@ -24,6 +24,11 @@ namespace LR9
 		/// Площадь треугольника.
 		/// </summary>
 		protected double square;
+
+		/// <summary>
+		/// Углы треугольника.
+		/// </summary>
+		protected double[] angels;
 		#endregion
 
 		#region Методы
@@ -56,6 +61,27 @@ namespace LR9
 				* (halfPerimetr - sidesLength[0])
 				* (halfPerimetr - sidesLength[1])
 				* (halfPerimetr - sidesLength[2]));
+
+			CalculateAngels();
+		}
+
+		/// <summary>
+		/// Вычисление углов.
+		/// </summary>
+		protected void CalculateAngels()
+		{
+			/// Вычисление углов треугольника.
+			angels = new double[3];
+
+			for (int sideNum = 0; sideNum < 3; sideNum++)
+			{
+				angels[sideNum] = Math.Acos((sidesLength[sideNum] * sidesLength[sideNum]
+					+ sidesLength[(sideNum + 1) % 3] * sidesLength[(sideNum + 1) % 3]
+					- sidesLength[(sideNum + 2) % 3] * sidesLength[(sideNum + 2) % 3])
+					/ (2 * sidesLength[sideNum] * sidesLength[(sideNum + 1) % 3])) 
+					* 180 
+					/ Math.PI;
+			}
 		}
 
 		/// <summary>
@@ -71,8 +97,13 @@ namespace LR9
 			/// Вывод периметра.
 			Console.WriteLine($"Периметр:{perimetr}");
 
-			/// Плозадь треугольника.
-			Console.WriteLine($"Площаь треугольника:{square}");
+			/// Площадь треугольника.
+			Console.WriteLine($"Площадь треугольника:{square}");
+
+			/// Углы треугольника.
+			Console.WriteLine($"Угол треугольника:{angels[0]} градусов.");
+			Console.WriteLine($"Угол треугольника:{angels[1]} градусов.");
+			Console.WriteLine($"Угол треугольника:{angels[2]} градусов.");
 		}
 		#endregion
 
