@@ -20,20 +20,23 @@ namespace LR6
 			};
 
 			Parent father = new Parent(
-				"Петров",
 				"Николай",
-				45,
+				"Петров",
+				0,
 				true,
 				"89654754251",
 				childrens);
 
 			Parent mother = new Parent(
-				"Петрова",
 				"Татьяна",
-				45,
+				"Петрова",
+				0,
 				false,
 				"89654778951",
 				childrens);
+
+			father.CalculateAge(new DateTime(1968, 01, 15));
+			mother.CalculateAge(new DateTime(1966, 04, 23));
 
 			father.MarryOn(mother);
 			mother.MarryOn(father);
@@ -45,12 +48,14 @@ namespace LR6
 			};
 
 			children = new Children(
+				"Иван",
 				"Петров",
-				"Иванов",
-				13,
+				0,
 				true,
 				"89654728651",
 				parents);
+
+			children.CalculateAge(new DateTime(2008, 02, 03));
 
 			children.GetPersonData();
 			father.GetPersonData();
@@ -58,6 +63,21 @@ namespace LR6
 
 			children.UseSpecialAbilities();
 			father.UseSpecialAbilities();
+
+			CarryOutMainActivity(new List<Person>
+			{
+				children,
+				father,
+				mother
+			});
+		}
+
+		static void CarryOutMainActivity(List<Person> family)
+		{
+			foreach(var person in family)
+			{
+				person.CarryOutMainActivity();
+			}
 		}
 	}
 }

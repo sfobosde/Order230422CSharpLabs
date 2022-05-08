@@ -39,6 +39,14 @@ namespace LR6
 			Childrens = null;
 			Console.WriteLine("Вы отказались от детей.");
 		}
+
+		/// <summary>
+		/// Основная деятельность взрослого человека - ходить на работу.
+		/// </summary>
+		public override void CarryOutMainActivity()
+		{
+			Console.WriteLine("Вы пошли на работу");
+		}
 		#endregion
 
 		#region Конструкторы

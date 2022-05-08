@@ -36,6 +36,14 @@ namespace LR6
 			Console.WriteLine($"Ваша успеваемость в школе улучшилась. " +
 				$"Средний балл: {AverageEducationRate}");
 		}
+
+		/// <summary>
+		/// Основная деятельность ребенка - учеба в школе.
+		/// </summary>
+		public override void CarryOutMainActivity()
+		{
+			Console.WriteLine("Вы пошли в школу.");
+		}
 		#endregion
 
 		#region Конструкторы
