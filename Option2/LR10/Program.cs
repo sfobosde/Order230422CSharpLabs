@@ -26,10 +26,6 @@ namespace LR10
 
 			calculator.SendResponse += form.GetResponseFromCalculator;
 
-			/// Подписываем функции на делегаты.
-
-			calculator.SendResponse += form.GetResponseFromCalculator;
-
 			/// Запускаем форму.
 			Application.Run(form);
 		}
