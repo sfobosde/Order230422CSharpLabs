@@ -7,6 +7,13 @@ namespace LR10
 	/// </summary>
 	class Calculator
 	{
+		/// <summary>
+		/// Делегат и событие передачи вычислений на форму.
+		/// </summary>
+		/// <param name="response"></param>
+		public delegate void SendingCalculationResponse(double response);
+		public event SendingCalculationResponse SendResponse;
+
 		#region Calculations
 		/// <summary>
 		/// Функция для вычисления СА.
@@ -41,9 +48,6 @@ namespace LR10
 		/// <returns></returns>
 		private double GetGcd(double firstArg, double secondArg)
 		{
-			double[] fadividers = new double[(int)firstArg];
-			double[] sadividers = new double[(int)secondArg];
-
 			double divider = 1;
 			double gcd = divider;
 			int totalDividers = 0;
@@ -62,12 +66,5 @@ namespace LR10
 			return gcd;
 		}
 		#endregion
-
-		/// <summary>
-		/// Делегат и событие передачи вычислений на форму.
-		/// </summary>
-		/// <param name="response"></param>
-		public delegate void SendingCalculationResponse(double response);
-		public event SendingCalculationResponse SendResponse;
 	}
 }
